@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>WarmKing Inc.</title>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style/style.css"/>
+    <link href="style/style.css" rel="stylesheet"/>
     <script src="script/script.js"></script>
 </head>
 <body>
@@ -15,32 +15,32 @@
     </div>
     <nav>
         <ul class="navmenu">
-            <li><a class="headeranchor" href="#cont1">Hem</a></li>
-            <li><a class="headeranchor" href="#cont2">Om Oss</a></li>
-            <li><a class="headeranchor" href="#cont3">Produkter</a></li>
-            <li><a class="headeranchor" href="#cont4">Policy</a></li>
+            <li><a class="menuitem" href="#home">Hem</a></li>
+            <li><a class="menuitem" href="#about">Om Oss</a></li>
+            <li><a class="menuitem" href="#products">Produkter</a></li>
+            <li><a class="menuitem" href="#policy">Policy</a></li>
         </ul>
     </nav>
     <ul class="navicons">
-        <li><a class="headeranchor" href="#"><i class='bx bx-search-alt navicon'></i></a></li>
-        <li><a class="headeranchor" href="#"><i class='bx bx-menu navicon' ></i></a></li>
+        <li><a class="menuitem" id="burger" href="#"><i class='bx bx-menu'></i></a></li>
+        <li><a class="menuitem" href="#"><i class='bx bx-search-alt'></i></a></li>
     </ul>
 </header>
 <main>
-    <div class="container">
-        <div class="content" id="cont1">
+    <section id="content" class="content">
+        <div id="home">
+            Home
+        </div>
+        <div id="about">
             Div 1
         </div>
-        <div class="content" id="cont2">
+        <div id="products">
             Div 2
         </div>
-        <div class="content" id="cont3">
+        <div id="policy">
             Div 3
         </div>
-        <div class="content" id="cont4">
-            Div 4
-        </div>
-    </div>
+    </section>
 </main>
 </body>
 </html>

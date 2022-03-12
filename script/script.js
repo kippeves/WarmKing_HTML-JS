@@ -1,9 +1,28 @@
-//document.getElementById('cont1');
-document.onreadystatechange = function(){
+document.onreadystatechange = ()=>{
     if(document.readyState === "complete"){
-        document.getElementById('cont2').style.display = 'none';
-        document.getElementById('cont3').style.display = 'none';
-        document.getElementById('cont4').style.display = 'none';
-        document.getElementById('cont5').style.display = 'none';
+        const storedSection = localStorage.getItem('activeSection');
+        const section = storedSection?storedSection:'#home';
+        setActive(section);
+        const   menu = document.querySelectorAll('.navmenu a');
+        for(const item of menu){
+            item.addEventListener('click',(e)=> {
+                setActive(e.target.hash);
+            })
+        }
+        const burger = document.getElementById("burger");
+        burger.addEventListener('click',()=>{
+            document.querySelector('.navmenu').classList.toggle('active');
+        });
+    }
+}
+
+const setActive = (name) => {
+    const   setActive = document.querySelector(name);
+            setActive.style.display="block";
+            localStorage.setItem('activeSection',name);
+    const sections = document.querySelector('.content').querySelectorAll('div');
+    for(const section of sections){
+        if(section !== setActive)
+            section.style.display = 'none';
     }
 }
