@@ -51,16 +51,21 @@ header {
     list-style: none;
 }
 
+div>h1{
+    padding-bottom:0.5em;
+    margin-bottom:1em;
+    border-bottom:1px dotted var(--primary);
+}
+
 .contact{
     display:grid;
     text-transform: capitalize;
     grid-template-areas:
-    "title title"
     "name email"
     "subject subject"
     "message message"
     "submit .";
-    grid-template-rows:3em 3em 3em 1fr 2em;
+    grid-template-rows:3em 3em 1fr 2em;
     grid-template-columns: 1fr 1fr;
     gap:1em;
     row-gap: 1em;
@@ -128,6 +133,49 @@ header {
     gap: 1em;
 }
 
+.news{
+    max-width:50vw;
+    min-width:40vw;
+    min-height:inherit;
+}
+.news article{
+    display:grid;
+    margin-bottom:2em;
+    align-items: baseline;
+    grid-template-areas:
+    "header date"
+    "text text"
+    "link .";
+    grid-template-columns: 2fr 1fr;
+}
+
+.articlelink{
+    margin:0.5em 0;
+}
+
+.articleheader{
+    grid-area: header;
+    margin-bottom:0.5em;
+}
+
+.articledate{
+    grid-area:date;
+    text-align:right;
+    font-weight:lighter;
+    font-style: italic;
+}
+
+.articletext{
+    grid-area:text;
+}
+
+.shortarticletext{
+    grid-area:text;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 
 .navicons {
     display: none;
@@ -198,6 +246,10 @@ main {
 
     .contact{
         width:100%;
+    }
+
+    .news article{
+
     }
 
     .policy{
@@ -272,5 +324,8 @@ main {
 
     .policy{
         columns:1;
+    }
+    .news{
+        max-width:100%;
     }
 }
